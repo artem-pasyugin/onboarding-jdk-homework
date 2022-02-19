@@ -29,5 +29,6 @@ public class HomeWork1 {
         int[] result = new int[nums1.length + nums2.length];
 
         return result;
+        //ывавыпа
     }
 }
