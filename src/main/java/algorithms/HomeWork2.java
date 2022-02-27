@@ -14,6 +14,15 @@ public class HomeWork2 {
      * @return измененный nums массив с нулями в конце
      */
     public int[] moveZeroes(int[] nums) {
-        return nums;
+
+        int[] shiftedArray = new int[nums.length];
+        int count = 0;
+        for (int num : nums) {
+            if (num != 0) {
+                shiftedArray[count] = num;
+                count++;
+            }
+        }
+     return nums;
     }
 }
