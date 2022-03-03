@@ -1,1 +1,3 @@
 rootProject.name = 'onboarding-jdk-homework'
+include 'server'
+include 'client'

@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "profiles": [
+    "development"
+  ],
+  "label": null,
+  "version": null,
+  "state": null,
+  "propertySources": [
+    {
+      "name": "classpath:/configs/client/client-development.yml",
+      "source": {
+        "text": "Hello World!"
+      }
+    },
+    {
+      "name": "classpath:/configs/client/client.yml",
+      "source": {
+        "text": "Ошибка! Добавь соответствующий спринг профиль!"
+      }
+    }
+  ]
+}
