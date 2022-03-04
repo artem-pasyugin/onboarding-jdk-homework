@@ -28,7 +28,7 @@ public class ClientTest {
     @Test
     public void testCase() throws IOException {
         Assertions.assertEquals(
-                this.restTemplate.getForObject("http://localhost:" + port + "/hello", String.class),
-                new String(Files.readAllBytes(Paths.get(resourceFile.getURI()))));
+                new String(Files.readAllBytes(Paths.get(resourceFile.getURI()))),
+                this.restTemplate.getForObject("http://localhost:" + port + "/hello", String.class));
     }
 }

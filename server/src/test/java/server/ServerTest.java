@@ -26,8 +26,9 @@ public class ServerTest {
 
     @Test
     public void testCase() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
         Assertions.assertEquals(
-                new ObjectMapper().readTree(this.restTemplate.getForObject("http://localhost:" + port + "/client/development", String.class)),
-                new ObjectMapper().readTree(resourceFile.getFile()));
+                objectMapper.readTree(resourceFile.getFile()),
+                objectMapper.readTree(this.restTemplate.getForObject("http://localhost:" + port + "/client/development", String.class)));
     }
 }
