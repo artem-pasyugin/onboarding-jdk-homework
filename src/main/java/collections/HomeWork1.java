@@ -1,8 +1,7 @@
 package collections;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Домашнее задание №1.
@@ -22,8 +21,11 @@ class HomeWork1 {
         if (persons == null) {
             return new HashMap<>();
         }
-
-        return null;
+        Map<Person, String> map = new TreeMap<>(Comparator.comparing(o -> o.age, Comparator.reverseOrder()));
+        for (Person person : persons) {
+         map.put(person,comment);
+        }
+        return map;
     }
 
     /**
@@ -45,5 +47,19 @@ class HomeWork1 {
             this.birthPlace = birthPlace;
             this.isDeveloper = isDeveloper;
         }
-    }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Person person = (Person) o;
+            return age == person.age && isDeveloper == person.isDeveloper && Objects.equals(name, person.name) && Objects.equals(birthPlace, person.birthPlace);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name, age, birthPlace, isDeveloper);
+        }
+        }
+
 }
