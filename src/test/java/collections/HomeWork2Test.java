@@ -24,9 +24,9 @@ class HomeWork2Test {
 
     private static Stream<Arguments> arguments() {
         return Stream.of(
-                Arguments.of(null, null)
-//                Arguments.of(new HomeWork2.Node(1, null), new HomeWork2.Node(1, null)),
-//                Arguments.of(new HomeWork2.Node(1, new HomeWork2.Node(2, null)), new HomeWork2.Node(2, new HomeWork2.Node(1, null)))
+                Arguments.of(null, null),
+                Arguments.of(new HomeWork2.Node(1, null), new HomeWork2.Node(1, null)),
+                Arguments.of(new HomeWork2.Node(1, new HomeWork2.Node(2, null)), new HomeWork2.Node(2, new HomeWork2.Node(1, null)))
         );
     }
 }
