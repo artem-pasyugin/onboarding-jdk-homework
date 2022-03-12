@@ -19,8 +19,12 @@ class HomeWork2 {
         if (head == null || head.next == null) {
             return head;
         }
-
-        return null;
+        else {
+            Node remaining = reverseList(head.next);
+            head.next.next = head;
+            head.next = null;
+            return remaining;
+        }
     }
 
     /**
@@ -36,6 +40,14 @@ class HomeWork2 {
         Node(int val, Node next) {
             this.val = val;
             this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "val=" + val +
+                    ", next=" + next +
+                    '}';
         }
 
         @Override
