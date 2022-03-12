@@ -19,7 +19,6 @@ class HomeWork2Test {
 
         HomeWork2.Node actual = homeWork.reverseList(head);
 
-        Assertions.assertNotNull(actual);
         Assertions.assertEquals(actual, expectResult, "Нарушен порядок элементов");
     }
 
