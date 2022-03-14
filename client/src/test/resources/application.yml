@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: client
+  cloud:
+    config:
+      enabled: false
+text: "Hello World!"
