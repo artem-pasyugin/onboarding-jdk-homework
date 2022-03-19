@@ -1,39 +1,40 @@
 package algorithms;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class HomeWork1Test {
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+public class HomeWork1Test {
     private final HomeWork1 homework = new HomeWork1();
 
     @Test
-    void testCase1() {
-        int[] nums1 = new int[]{1, 2};
-        int[] nums2 = new int[]{2, 5, 6};
-
-        int[] result = homework.merge(nums1, nums2);
-
-        Assertions.assertArrayEquals(new int[]{1, 2, 2, 5, 6}, result);
+    public void testCase1() {
+        int[] arr = {1, 1, 2, 3, 4};
+        assertFalse(homework.checkIsUnique(arr));
     }
 
     @Test
-    void testCase2() {
-        int[] nums1 = new int[]{1};
-        int[] nums2 = new int[]{0};
-
-        int[] result = homework.merge(nums1, nums2);
-
-        Assertions.assertArrayEquals(new int[]{0,1}, result);
+    public void testCase2() {
+        int[] arr = {1, 0, 2, 3, 3};
+        assertFalse(homework.checkIsUnique(arr));
     }
 
     @Test
-    void testCase3() {
-        int[] nums1 = new int[]{0};
-        int[] nums2 = new int[]{1};
+    public void testCase3() {
+        int[] arr = {1, 2, 3, 4, 5};
+        assertTrue(homework.checkIsUnique(arr));
+    }
 
-        int[] result = homework.merge(nums1, nums2);
+    @Test
+    public void testCase4() {
+        int[] arr = {1, 4, 2, 2, 3, 6};
+        assertFalse(homework.checkIsUnique(arr));
+    }
 
-        Assertions.assertArrayEquals(new int[]{0, 1}, result);
+    @Test
+    public void testCase5() {
+        int[] arr = {5, 5};
+        assertFalse(homework.checkIsUnique(arr));
     }
 }
