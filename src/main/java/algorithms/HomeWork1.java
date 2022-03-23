@@ -16,9 +16,25 @@ public class HomeWork1 {
      * @return - true массив уникален, а false не уникален
      */
     public boolean checkIsUnique(int[] numbers) {
+        oolean result = true;
+        for (int i = 0; i < numbers.length ; i++) {
+//            System.out.println(numbers[i]);
+//            System.out.println("__________");
 
-        return true;
+            for (int j = i + 1; j < numbers.length ; j++) {
+                if (numbers[i] == numbers[j]){
+                    result = false;
+                }
+//                System.out.println(j);
+//                System.out.println(result);
+
+            }
+        }
+        return result;
     }
 }
+
+
+
 
 
