@@ -1,18 +1,8 @@
 package algorithms;
 
-/**
- * Домашнее задание №2.
- * Дано: Целочисленный массив
- * Ожидание: упорядочить список по возрастанию
- */
+
 public class HomeWork2 {
-    /**
-     * На входе целочисленный массив
-     * Необходимо отсортировать массив по возрастанию
-     *
-     * @param numbers - массив. Пример: [1,2]
-     * @return - отсортированный массив
-     */
+
     public int[] sortByAscendingOrder(int numbers[]) {
         boolean result = false;
         int k = 1000;
@@ -35,7 +25,7 @@ public class HomeWork2 {
             System.out.print(number + ", ");
 
         }
-        System.out.print("--------");
+
 
 
         return numbers;
