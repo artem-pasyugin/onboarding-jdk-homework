@@ -1,48 +1,29 @@
 package collections;
 
-import java.util.Objects;
+import java.util.List;
+import java.util.Set;
+
+
 /**
- * Домашнее задание №2.
- * Дано: Класс Products
- * Ожидание: Вернуть boolean значение
+ * Домашнее задание №1.
+ * Дано: Класс Product
+ * Ожидание: Реализовать метод convertProductsToSet возвращающий Set продуктов
  */
 public class HomeWork1 {
+
     /**
-     * Функция для сравнения объектов
+     * Функция convertProductsToSet
      *
-     * @param x,y - объекты
-     * @return - boolean значение
+     * @param products - список продуктов
+     * @return вернуть Set
      */
-    public boolean compare (Product x, Product y){
-        if (x.equals(y)){
-            return  true;
-        }
-        return false;
+    public Set<Product> convertProductsToSet(List<Product> products) {
+        return null;
     }
+
     public static class Product {
-        String name;
-        String country;
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Product product = (Product) o;
-            return Objects.equals(name, product.name) && Objects.equals(country, product.country);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(name, country);
-        }
-
-        @Override
-        public String toString() {
-            return "Product{" +
-                    "name='" + name + '\'' +
-                    ", country='" + country + '\'' +
-                    '}';
-        }
+        private final String name;
+        private final String country;
 
         public Product(String name, String country) {
             this.name = name;

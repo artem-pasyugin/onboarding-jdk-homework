@@ -3,31 +3,21 @@ package collections;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 public class HomeWork2Test {
-    private final HomeWork2 homeWork = new HomeWork2();
-    List<Integer> expected = new LinkedList<Integer>(Arrays.asList(3, 4, 5, 20, 30));
+    HomeWork2 homeWork = new HomeWork2();
+    HomeWork2.Node node1 = new HomeWork2.Node(7, new HomeWork2.Node(7, null));
+    HomeWork2.Node node2 = new HomeWork2.Node(2, null);
+
 
     @Test
-    void testCase1(){
-        HomeWork2 list = new HomeWork2();
-        list.addNode(30);
-        list.addNode(3);
-        list.addNode(4);
-        list.addNode(20);
-        list.addNode(5);
+    void testCase1() {
+        boolean actual = homeWork.getUniqueData(node1);
+        Assertions.assertFalse(actual);
+    }
 
-        HomeWork2.Node n = list.head;
-        while (n.next != null)
-            n = n.next;
-        list.printList(list.head);
-        list.sortLinkedList(list.head, n);
-        HomeWork2.Node actual = list.head;
-        String res = actual.toString();
-        list.printList(list.head);
-        Assertions.assertEquals(expected, res);
+    @Test
+    void testCase2() {
+        boolean actual = homeWork.getUniqueData(node2);
+        Assertions.assertTrue(actual);
     }
 }
