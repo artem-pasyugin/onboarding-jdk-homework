@@ -12,8 +12,13 @@
 ![](assets/images/1-3.png)
 ### 4. Склонируй новый проект в IDEA
 ![](assets/images/1-4.png)
-### 5. Вставь предложенную ссылку из 3 пункта в поле `URL` и нажми кнопку `Clone`
-### 6. Выбери `New Window`
+### 5. Появилась ошибка авторизации ?
+![](assets/images/1-5.png)
+### 6. Без паники :exclamation: GitHub защищается от неавторизованных действий и предлагает создать ключ
+- Создаем ключ - [Инструкция создания ключа](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- В итоге создались два файла в директории `~/.ssh/`
+- Сохраняем публичный ключ в github - [Инструкция сохранения ключа](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+- Клонируем проект заново - [Начинаем с пункта №3](#3-теперь-нажми-на-зеленую-кнопку-code-и-скопируй-предложенную-ссылку-ssh)
 ### 7. Теперь ты можешь полноценно работать и выполнять домашнее задание :clap:
 
 
@@ -33,16 +38,7 @@
 - Заполняем `Commit Message` и нажимаем `Commit and Push...`
 
 ![](assets/images/2-5.png)
-### 6. Появилась ошибка авторизации ?
-![](assets/images/2-6.png)
-### 7. Без паники :exclamation: GitHub защищается от неавторизованных действий и предлагает создать ключ
-### 8. Открываем терминал в IDEA (внизу на панели)
-> ssh-keygen -t ed25519 -C "your_name@email.com"
-- меняем только `your_name@email.com` - нажимаем все время enter до принта ! _Где your_name твой username_
-
-![](assets/images/2-8.png)
-### 9. Заходим и выполняем все пункты - [Инструкция сохранения ключа](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-### 10. Теперь ты можешь полноценно сделать 5 пункт и увидеть свои изменения на своей странице в GitHub :clap:
+### 6. Теперь ты можешь полноценно сделать 5 пункт и увидеть свои изменения на своей странице в GitHub :clap:
 
 
 Отправляем домашнее задание на проверку
