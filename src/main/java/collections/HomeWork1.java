@@ -1,49 +1,52 @@
 package collections;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.Objects;
 /**
- * Домашнее задание №1.
- * Дано: Список Persons с комментарием.
- * Ожидание: Вернуть Map с отсортированным возрастом по убыванию.
+ * Домашнее задание №2.
+ * Дано: Класс Products
+ * Ожидание: Вернуть boolean значение
  */
-class HomeWork1 {
-
+public class HomeWork1 {
     /**
-     * Функция преобразования из списка Persons с комментарием.
+     * Функция для сравнения объектов
      *
-     * @param persons - список персон, может содержать дубли
-     * @param comment - комментарий
-     * @return Map, где ключ - Person с возрастом по убыванию, а значение - комментарий.
+     * @param x,y - объекты
+     * @return - boolean значение
      */
-    public Map<Person, String> getPersonsWithCommentWithAgeSort(List<Person> persons, String comment) {
-        if (persons == null) {
-            return new HashMap<>();
+    public boolean compare (Product x, Product y){
+        if (x.equals(y)){
+            return  true;
+        }
+        return false;
+    }
+    public static class Product {
+        String name;
+        String country;
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Product product = (Product) o;
+            return Objects.equals(name, product.name) && Objects.equals(country, product.country);
         }
 
-        return null;
-    }
+        @Override
+        public int hashCode() {
+            return Objects.hash(name, country);
+        }
 
-    /**
-     * Информация о человеке
-     */
-    public static class Person {
-        //ФИО
-        private String name;
-        //Возраст
-        private int age;
-        //Место рождения
-        private String birthPlace;
-        //Является разработчиком ?
-        private boolean isDeveloper;
+        @Override
+        public String toString() {
+            return "Product{" +
+                    "name='" + name + '\'' +
+                    ", country='" + country + '\'' +
+                    '}';
+        }
 
-        public Person(String name, int age, String birthPlace, boolean isDeveloper) {
+        public Product(String name, String country) {
             this.name = name;
-            this.age = age;
-            this.birthPlace = birthPlace;
-            this.isDeveloper = isDeveloper;
+            this.country = country;
         }
     }
 }

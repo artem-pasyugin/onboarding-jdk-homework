@@ -1,33 +1,33 @@
 package collections;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.Test;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
-class HomeWork2Test {
-
+public class HomeWork2Test {
     private final HomeWork2 homeWork = new HomeWork2();
+    List<Integer> expected = new LinkedList<Integer>(Arrays.asList(3, 4, 5, 20, 30));
 
+    @Test
+    void testCase1(){
+        HomeWork2 list = new HomeWork2();
+        list.addNode(30);
+        list.addNode(3);
+        list.addNode(4);
+        list.addNode(20);
+        list.addNode(5);
 
-    @ParameterizedTest
-    @MethodSource("arguments")
-    void testCase(HomeWork2.Node head,
-                  HomeWork2.Node expectResult) {
-
-        HomeWork2.Node actual = homeWork.reverseList(head);
-
-        Assertions.assertNotNull(actual);
-        Assertions.assertEquals(actual, expectResult, "Нарушен порядок элементов");
-    }
-
-    private static Stream<Arguments> arguments() {
-        return Stream.of(
-                Arguments.of(null, null),
-                Arguments.of(new HomeWork2.Node(1, null), new HomeWork2.Node(1, null)),
-                Arguments.of(new HomeWork2.Node(1, new HomeWork2.Node(2, null)), new HomeWork2.Node(2, new HomeWork2.Node(1, null)))
-        );
+        HomeWork2.Node n = list.head;
+        while (n.next != null)
+            n = n.next;
+        list.printList(list.head);
+        list.sortLinkedList(list.head, n);
+        HomeWork2.Node actual = list.head;
+        String res = actual.toString();
+        list.printList(list.head);
+        Assertions.assertEquals(expected, res);
     }
 }
