@@ -5,31 +5,23 @@
 ===
 ### 1. Нажми кнопку `Fork` справа вверху
 ![](assets/images/1-1.png)
-### 2. Отлично! Ты создал собственную копию проекта на своей странице
+### 2. Отлично! Создалась копия проекта на личной странице
 ### 3. Теперь нажми на зеленую кнопку `Code` и скопируй предложенную ссылку SSH
-- Например `git@github.com:your_name/onboarding-jdk-homework.git`
+- Например `git@github.com:your_name/onboarding-jdk-homework.git`, _где your_name твой username_
 
 ![](assets/images/1-3.png)
 ### 4. Склонируй новый проект в IDEA
 ![](assets/images/1-4.png)
 ### 5. Вставь предложенную ссылку из 3 пункта в поле `URL` и нажми кнопку `Clone`
 ### 6. Выбери `New Window`
-### 7. В новом окне перейди в настройки Git
-- Нажми `Manage Remotes...`
-
-![](assets/images/1-7.png)
-### 8. Вставь ссылку и нажми `OK`
-- `https://github.com/artem-pasyugin/onboarding-jdk-homework`
-
-![img.png](assets/images/1-8.png)
-### 9. Теперь ты можешь полноценно работать и выполнять домашнее задание :clap:
+### 7. Теперь ты можешь полноценно работать и выполнять домашнее задание :clap:
 
 
 Приступаем к домашнему заданию
 ===
 ### 1. Нажимаем на кнопку в IDEA справа внизу с названием текущей ветки
 ### 2. Создаем отдельную ветку со своим именем от ветки с названием темы
-- например новая ветка `apasyugin` от ветки `origin/algorithms`
+- например новая ветка `algorithms_your_name` от ветки `origin/algorithms`, _где your_name твой username_
 
 ![img.png](assets/images/2-2.png) 
 ### 3. Выполняем домашнее задание
@@ -45,8 +37,8 @@
 ![](assets/images/2-6.png)
 ### 7. Без паники :exclamation: GitHub защищается от неавторизованных действий и предлагает создать ключ
 ### 8. Открываем терминал в IDEA (внизу на панели)
-> ssh-keygen -t ed25519 -C "your@email.com"
-- меняем только `your@email.com` - нажимаем все время enter до принта !
+> ssh-keygen -t ed25519 -C "your_name@email.com"
+- меняем только `your_name@email.com` - нажимаем все время enter до принта ! _Где your_name твой username_
 
 ![](assets/images/2-8.png)
 ### 9. Заходим и выполняем все пункты - [Инструкция сохранения ключа](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
