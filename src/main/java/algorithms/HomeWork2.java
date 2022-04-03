@@ -13,8 +13,20 @@ public class HomeWork2 {
      * @param numbers - массив. Пример: [1,2]
      * @return - отсортированный массив
      */
-    public int[] sortByAscendingOrder(int numbers[]) {
-
+    public int[] sortByAscendingOrder(int[] numbers) {
+        bubbleSort(numbers);
         return numbers;
+    }
+
+    public static void bubbleSort(int[] numbers) {
+        for (int i = numbers.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int tmp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = tmp;
+                }
+            }
+        }
     }
 }
