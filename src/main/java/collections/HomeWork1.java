@@ -29,6 +29,19 @@ public class HomeWork1 {
             this.name = name;
             this.country = country;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Product)) return false;
+            Product product = (Product) o;
+            return Objects.equals(name, product.name) && Objects.equals(country, product.country);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name, country);
+        }
     }
 }
 
