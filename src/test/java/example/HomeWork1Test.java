@@ -1,29 +1,30 @@
 package example;
 
+import example.HomeWork1;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.Test;
 
-import java.util.stream.Stream;
+public class HomeWork1Test {
+    private final HomeWork1 homework = new HomeWork1();
 
-
-class HomeWork1Test {
-
-    private final HomeWork1 homeWork = new HomeWork1();
-
-    @ParameterizedTest
-    @MethodSource("arguments")
-    void testCase(String param, String result) {
-        String expected = homeWork.run(param);
-        Assertions.assertEquals(expected, result);
+    @Test
+    void testCase1() {
+        int[] arr = new int[]{7, 2, 3, 3, 2};
+        int result = homework.singleNumber(arr);
+        Assertions.assertEquals(7, result);
     }
 
+    @Test
+    void testCase2() {
+        int[] arr = new int[]{0, 2, 3, 3, 2, 0};
+        int result = homework.singleNumber(arr);
+        Assertions.assertEquals(-1, result);
+    }
 
-    private static Stream<Arguments> arguments() {
-        return Stream.of(
-                //TODO
-                Arguments.of("param", "result")
-        );
+    @Test
+    void testCase3() {
+        int[] arr = new int[]{6, 1, 6};
+        int result = homework.singleNumber(arr);
+        Assertions.assertEquals(1, result);
     }
 }
