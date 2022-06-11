@@ -8,6 +8,7 @@ package example;
 public class HomeWork2 {
 
     /**
+     * q
      * Пересечение элементов в двух массивах
      *
      * @param num1 - первый массив. Пример: [1,2,3]
@@ -16,7 +17,18 @@ public class HomeWork2 {
      */
     public int[] intersectionMethod(int[] num1, int[] num2) {
         int[] result = new int[Math.min(num1.length, num2.length)];
-        // TODO
+        int x = 0;
+        for (int i = 0; i < num1.length; i++) {
+
+            for (int j = 0; j < num2.length; j++) {
+                if (num1[i] == num2[j]) {
+                    result[x] = num1[i];
+                    x++;
+                }
+            }
+        }
         return result;
     }
 }
+
+
