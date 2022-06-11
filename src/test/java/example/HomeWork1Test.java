@@ -14,16 +14,40 @@ class HomeWork1Test {
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void testCase(String param, String result) {
-        String expected = homeWork.run(param);
-        Assertions.assertEquals(expected, result);
+    void testCase(HomeWork1.ListNode listNode1, HomeWork1.ListNode listNode2, HomeWork1.ListNode expected) {
+        HomeWork1.ListNode result = homeWork.getIntersectionNode(listNode1, listNode2);
+
+        if (expected == null) {
+            Assertions.assertNull(result);
+            return;
+        } else if (result == null) {
+            Assertions.fail("Результат не должен быть пустым");
+        }
+
+        int i = 1;
+        while (result.next != null) {
+            if (result.val != expected.val) {
+                Assertions.fail("Нету совпадения на элементе с номером %s".formatted(i));
+            }
+            result = result.next;
+            expected = expected.next;
+            i++;
+        }
+
     }
 
 
     private static Stream<Arguments> arguments() {
         return Stream.of(
-                //TODO
-                Arguments.of("param", "result")
+                Arguments.of(new HomeWork1.ListNode(4, new HomeWork1.ListNode(1, new HomeWork1.ListNode(8, new HomeWork1.ListNode(4, new HomeWork1.ListNode(5, null))))),
+                        new HomeWork1.ListNode(5, new HomeWork1.ListNode(6, new HomeWork1.ListNode(1, new HomeWork1.ListNode(8, new HomeWork1.ListNode(4, new HomeWork1.ListNode(5, null)))))),
+                        new HomeWork1.ListNode(1, new HomeWork1.ListNode(8, new HomeWork1.ListNode(4, new HomeWork1.ListNode(5, null))))),
+                Arguments.of(new HomeWork1.ListNode(2, new HomeWork1.ListNode(6, new HomeWork1.ListNode(4, null))),
+                        new HomeWork1.ListNode(1, new HomeWork1.ListNode(5, null)),
+                        null),
+                Arguments.of(new HomeWork1.ListNode(1, null),
+                        new HomeWork1.ListNode(1, null),
+                        new HomeWork1.ListNode(1, null))
         );
     }
 }
