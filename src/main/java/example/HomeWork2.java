@@ -8,7 +8,7 @@ package example;
 public class HomeWork2 {
 
     /**
-     * q
+     *
      * Пересечение элементов в двух массивах
      *
      * @param num1 - первый массив. Пример: [1,2,3]
