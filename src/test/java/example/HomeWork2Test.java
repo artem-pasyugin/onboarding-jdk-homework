@@ -7,10 +7,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+public class HomeWork2Test {
 
-class HomeWork1Test {
-
-    private final HomeWork1 homeWork = new HomeWork1();
+    private final HomeWork2 homeWork = new HomeWork2();
 
     @ParameterizedTest
     @MethodSource("arguments")
@@ -22,8 +21,9 @@ class HomeWork1Test {
 
     private static Stream<Arguments> arguments() {
         return Stream.of(
-                Arguments.of(new int[]{1, 2, 1}, new int[]{1, 2, 1, 1, 2, 1}),
-                Arguments.of(new int[]{1, 3, 2, 1}, new int[]{1, 3, 2, 1, 1, 3, 2, 1}),
+                Arguments.of(new int[]{3, 1, 2, 4}, new int[]{2, 4, 3, 1}),
+                Arguments.of(new int[]{1}, new int[]{1}),
+                Arguments.of(new int[]{0}, new int[]{0}),
                 Arguments.of(new int[]{}, new int[]{})
         );
     }
