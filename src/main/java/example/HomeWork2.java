@@ -31,9 +31,7 @@ class HomeWork2 {
                 l++;
             }
         }
-        String ordernumbersString = Arrays.toString(ordernumbers);
-        System.out.println(ordernumbersString);
-        // TODO реализовать тут
+                // TODO реализовать тут
         return ordernumbers;
 
     }
