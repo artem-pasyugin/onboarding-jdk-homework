@@ -22,7 +22,6 @@ class HomeWork1 {
             }else {
                 result[i]=numbers[i- numbers.length] ;
             }
-            System.out.println(result[i]);
         }
         return result;
     }
