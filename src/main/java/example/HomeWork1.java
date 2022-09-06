@@ -24,7 +24,7 @@ class HomeWork1 {
             }
         }
         // TODO реализовать тут
-        return twonumbers;
+         return twonumbers;
     }
 
 }
