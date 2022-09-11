@@ -13,9 +13,17 @@ class HomeWork1 {
      * @param numbers - целочисленный массив, пример [1, 2, 1].
      * @return возвращаемый целочисленный массив, пример [1, 2, 1, 1, 2, 1].
      */
-    public int[] run(int[] numbers) {
-        // TODO реализовать тут
-        return null;
+    public int[] run ( int[] numbers ) {
+        int newMassiveLength = numbers.length * 2;
+        int[] result = new int[newMassiveLength];
+        for ( int i = 0 ; i < newMassiveLength ; i++ ) {
+            if ( i < numbers.length ) {
+                result[i] = numbers[i];
+            } else {
+                result[i] = numbers[i - numbers.length];
+            }
+        }
+        return result;
     }
-
 }
+
