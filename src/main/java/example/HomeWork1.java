@@ -1,5 +1,12 @@
 package example;
 
+
+import org.w3c.dom.Node;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+
 /**
  * Домашнее задание №1.
  * Дано: Две вершины разных одиночных связных списков.
@@ -19,9 +26,30 @@ class HomeWork1 {
      * @param headB - вершина второго связного списка
      * @return пересечение связных списков. Если два связных списка не пересекаются - вернуть null
      */
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        // TODO
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+        HashSet<ListNode> hashSet = new HashSet<ListNode>();
+
+        while (headA != null) {
+            hashSet.add(headA);
+            headA = headA.next;
+        }
+
+        for (int i = 0; i < hashSet.size(); i++) {
+            if (headA != null && headB != null) {
+                headA = headA.next;
+                if (hashSet.equals(headB)) {
+
+                    return headA;
+                }
+                headA = headB;
+                headB = headB.next;
+            }
+        }
+
         return null;
+
+        // TODO
     }
 
     /**
